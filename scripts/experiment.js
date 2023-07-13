@@ -59,9 +59,9 @@ function inputID() {
         timeline: id,
         on_finish: function () {
             if (
-                (participantID <= participantOrder.length) |
-                (participantID == 666) |
-                (participantID == 6666) |
+                (participantID <= participantOrder.length) ||
+                (participantID == 666) ||
+                (participantID == 6666) ||
                 (participantID == 66666)
             ) {
                 // add check for existing participant data
@@ -246,7 +246,7 @@ function runExperiment() {
         The outcome of this choice was <strong>${
             banditPrize.points
         } points</strong> so you will receive 
-        <strong>\$${banditPrize.amount.toFixed(
+        <strong>$${banditPrize.amount.toFixed(
             2
         )}</strong> for this task. <br><br>
         <span style="font-weight:bold;font-size:130%">Please let the experimenter know that you have finished.</span>
@@ -301,7 +301,7 @@ function runExperiment() {
 
     // EARS questionnaire --------------------------------------------------------------------------------------------------------------------------
 
-    function createEARSInstructions(side) {
+    const createEARSInstructions = (side) => {
         return `
       On the next screen, you will be asked to imagine that you are going to select the option presented on the ${side}-hand side of the screen.
       You will be asked a number of questions about the <strong>outcome (number of points)</strong> that would occur if you were to select that option.
